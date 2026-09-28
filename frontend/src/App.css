@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+#hero-img {
+  background: url("../public/gero-bg.avif");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* 1. A szülő elem hozza létre a 3D-s teret */
+.container {
+  perspective: 1000px; /* Minél kisebb, annál erősebb/drasztikusabb a 3D hatás */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 2. A megdöntendő div */
+.card {
+  width: 250px;
+  height: 350px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+
+  /* A faktikus megdöntés */
+  transform: rotateX(20deg) rotateY(-15deg);
+
+  /* Sima átmenet, ha interakciót is szeretnél */
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* 3. Hasznos trükk: Egér rávitellel még élethűbbé tehető */
+.card:hover {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.05);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+}
