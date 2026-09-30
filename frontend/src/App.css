@@ -6,15 +6,3 @@
   background-attachment: fixed;
   background-position: center;
 }
-
-.upper {
-  background: linear-gradient(
-    105deg,
-    rgba(110, 142, 251, 1),
-    rgb(75, 66, 250)
-  );
-}
-
-.lower {
-  background: rgb(57, 52, 147);
-}

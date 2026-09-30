@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import RowGroup from "../../../components/RowGroup";
 
 interface Props {
   to: string;
@@ -8,17 +9,15 @@ interface Props {
 
 export default function NavbarItem({ to, icon, text }: Props) {
   return (
-    <Link to={to} className="relative">
-      <div className="w-10 h-10 p-2 rounded-xl relative duration-100 hover:scale-110">
-        <div className="w-full h-full p-2 rounded-xl absolute top-0 left-0 z-20 upper text-white">
-          {icon}
-        </div>
-
-        <div className="w-full h-full p-2 rounded-xl absolute top-1.25 left-0 z-10 lower" />
-      </div>
-
-      <div className="absolute top-15 left-1/2 -translate-x-1/2 bg-white text-black px-4 py-1 rounded-lg whitespace-nowrap">
-        <h1>{text}</h1>
+    <Link to={to}>
+      <div className="px-2 py-1 rounded-xl duration-200 hover:bg-black/10">
+        <RowGroup
+          variant="center"
+          className="w-full h-full p-2 rounded-xl text-white items-center gap-2"
+        >
+          <div>{icon}</div>
+          <h1 className="whitespace-nowrap font-bold">{text}</h1>
+        </RowGroup>
       </div>
     </Link>
   );
