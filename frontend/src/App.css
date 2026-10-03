@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
-#hero-img {
-  background: url("../public/gero-bg.avif");
+#hero-img, #not-found-page {
+  background: url("./gero-bg.avif");
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
+  /* background-color: rgb(54, 92, 214); */
+}
+
+#showcase-tiles {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
 }

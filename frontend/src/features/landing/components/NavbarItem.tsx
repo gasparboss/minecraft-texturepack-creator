@@ -10,7 +10,7 @@ interface Props {
 export default function NavbarItem({ to, icon, text }: Props) {
   return (
     <Link to={to}>
-      <div className="px-2 py-1 rounded-xl duration-200 hover:bg-black/10">
+      <div className="px-2 py-1 rounded-xl duration-200 hover:bg-black/20">
         <RowGroup
           variant="center"
           className="w-full h-full p-2 rounded-xl text-white items-center gap-2"

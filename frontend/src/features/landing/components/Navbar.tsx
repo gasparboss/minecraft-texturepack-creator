@@ -1,16 +1,24 @@
+import { useMediaQuery } from "react-responsive";
 import RowGroup from "../../../components/RowGroup";
 import NavbarItem from "./NavbarItem";
-import { IconBrush, IconFolders, IconLogin2 } from "@tabler/icons-react";
+import {
+  IconBrush,
+  IconFolders,
+  IconLogin2,
+  IconPalette,
+} from "@tabler/icons-react";
 
 export default function Navbar() {
+  const breakpoint = useMediaQuery({ maxWidth: 1279 });
+
   return (
     <nav
-      className={`absolute bottom-35 w-[70%] h-20 rounded-2xl backdrop-blur-xs border-2 border-white shadow-[0_10px_10px_rgba(0,0,0,0.25)] duration-300 rotate-x-10`}
+      className={`bg-black/10 ${breakpoint ? "static h-fit" : "absolute h-20"} z-20 bottom-25 w-[70%] rounded-2xl backdrop-blur-xs border-2 border-white shadow-(--primary-shadow) duration-300 rotate-x-10`}
     >
-      <RowGroup variant="even" className="w-full h-full items-center">
+      <RowGroup variant="even" className="w-full h-full items-center flex-wrap">
         <NavbarItem
           to="/app"
-          icon={<IconBrush stroke={2} />}
+          icon={<IconPalette stroke={2} />}
           text="New Project"
         />
         <NavbarItem
@@ -18,11 +26,7 @@ export default function Navbar() {
           icon={<IconFolders stroke={2} />}
           text="Projects"
         />
-        <NavbarItem
-          to="/app"
-          icon={<IconBrush stroke={2} />}
-          text="Valami"
-        />
+        <NavbarItem to="/app" icon={<IconBrush stroke={2} />} text="Valami" />
         <NavbarItem
           to="/auth/sign-in"
           icon={<IconLogin2 stroke={2} />}

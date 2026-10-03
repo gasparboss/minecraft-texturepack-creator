@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
+:root {
+  --primary-text: rgb(0, 0, 100);
+}
+
+@theme {
+  --primary-shadow: 0px 6px 1px var(--primary-text);
+  --primary-text: var(--primary-text);
+}
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: .8px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 0.8px;
 }
